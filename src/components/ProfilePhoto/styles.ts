@@ -1,7 +1,7 @@
 import styled, { css, DefaultTheme } from 'styled-components'
-import { GameCardProps } from '.'
+import { ProfilePhotoProps } from '.'
 
-type ProfileProps = Pick<GameCardProps, 'size'>
+type ProfileProps = Pick<ProfilePhotoProps, 'size'>
 
 const sizeModifiers = {
   normal: () => css`
