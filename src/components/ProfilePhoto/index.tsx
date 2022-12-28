@@ -1,12 +1,12 @@
 import * as S from './styles'
 
-export type GameCardProps = {
+export type ProfilePhotoProps = {
   title: string
   img: string
   size: 'normal' | 'large'
 }
 
-const ProfilePhoto = ({ title, img, size = 'normal' }: GameCardProps) => (
+const ProfilePhoto = ({ title, img, size = 'normal' }: ProfilePhotoProps) => (
   <S.Wrapper>
     <S.ImageBox size={size}>
       <S.Image src={img} alt="a circle with a user's profile image" />
