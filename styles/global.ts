@@ -1,4 +1,9 @@
-import { createGlobalStyle, css } from "styled-components"
+import {
+  createGlobalStyle,
+  css,
+  GlobalStyleComponent,
+  DefaultTheme
+} from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -32,6 +37,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    &::before,
+    &::after {
+      box-sizing: inherit;
+    }
   }
 
   ${({ theme }) => css`
@@ -41,103 +51,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
       font-family: ${theme.font.family};
-    }
-
-    /* Animations */
-    .toolTip {
-      position: relative;
-      border-bottom: 1px dashed darkgray;
-      cursor: pointer;
-    }
-
-    .toolTip:before {
-      visibility: hidden;
-      content: attr(title);
-      background-color: ${theme.colours.darkGray};
-      color: #f3f3f3;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-      position: absolute;
-      white-space: nowrap;
-      /* opacity: 0.7; */
-    }
-
-    .toolTip:after {
-      visibility: hidden;
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      border: 5px solid transparent;
-    }
-
-    .toolTip.top:before {
-      bottom: calc(100% + 5px + 1px);
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-              transform: translateX(-50%);
-    }
-
-    .toolTip.top:after {
-      bottom: calc(100% + 1px);
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-              transform: translateX(-50%);
-      border-bottom-width: 0;
-      border-top-color: ${theme.colours.darkGray};
-    }
-
-    .toolTip:hover:before,
-    .toolTip:hover:after {
-      visibility: visible;
-    }
-
-    .toolTip.bottom:before {
-      top: calc(100% + 5px + 1px);
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-              transform: translateX(-50%);
-    }
-
-    .toolTip.bottom:after {
-      top: calc(100% + 1px);
-      left: 50%;
-      -webkit-transform: translateX(-50%);
-              transform: translateX(-50%);
-      border-top-width: 0;
-      border-bottom-color: ${theme.colours.darkGray};
-    }
-
-    .toolTip[data-position="left"]:before {
-      right: calc(100% + 5px + 1px);
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-              transform: translateY(-50%);
-    }
-
-    .toolTip[data-position="left"]:after {
-      right: calc(100% + 1px);
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-              transform: translateY(-50%);
-      border-right-width: 0;
-      border-left-color: ${theme.colours.darkGray};
-    }
-
-    .toolTip.right:before {
-      left: calc(100% + 5px + 1px);
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-              transform: translateY(-50%);
-    }
-
-    .toolTip.right:after {
-      left: calc(100% + 1px);
-      top: 50%;
-      -webkit-transform: translateY(-50%);
-              transform: translateY(-50%);
-      border-left-width: 0;
-      border-right-color: ${theme.colours.darkGray};
+      background-color: ${theme.colours.primary};
     }
   `}  
 `

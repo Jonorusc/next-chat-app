@@ -28,7 +28,8 @@ export default {
     black: '#030517',
     lightGray: '#EAEAEA',
     gray: '#8F8F8F',
-    darkGray: '#2E2F42'
+    darkGray: '#2E2F42',
+    blue: '#6AC4D9'
   },
   spacings: {
     xxsmall: '0.8rem',
@@ -46,4 +47,4 @@ export default {
     modal: 40,
     alwaysOnTop: 50
   }
-}
+} as const 
