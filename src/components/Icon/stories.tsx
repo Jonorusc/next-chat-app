@@ -9,11 +9,7 @@ export default {
   args: {
     icon: <Lock />,
     badge: false,
-    color: 'white',
-    tooltip: {
-      title: 'here we have a title',
-      direction: 'right'
-    },
+    color: 'white'
   }
 } as Meta<IconProps>
 

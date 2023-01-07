@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import ToolTip from '.'
 import { TooltipProps } from '.'
 
-import { Lock } from 'styled-icons/material'
+import { Chat } from 'styled-icons/material-outlined'
 
 export default {
   title: 'ToolTip',
@@ -18,4 +18,4 @@ export default {
   },
 } as Meta<TooltipProps>
 
-export const Default: Story<TooltipProps> = (args) => <ToolTip {...args}><Lock size={20}/></ToolTip>
+export const Default: Story<TooltipProps> = (args) => <ToolTip {...args}><Chat size={20}/></ToolTip>

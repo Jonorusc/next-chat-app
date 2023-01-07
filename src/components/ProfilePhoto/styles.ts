@@ -26,7 +26,7 @@ export const ImageBox = styled.div<ProfileProps>`
     word-wrap: break-word;
     position: relative;
     overflow: hidden;
-    ${sizeModifiers[size]};
+    ${!!size && sizeModifiers[size]};
     background: #f6f7f8;
     background-image: linear-gradient(
       to right,

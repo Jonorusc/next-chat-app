@@ -3,7 +3,7 @@ import * as S from './styles'
 export type ProfilePhotoProps = {
   title: string
   img: string
-  size: 'normal' | 'large'
+  size?: 'normal' | 'large'
 }
 
 const ProfilePhoto = ({ title, img, size = 'normal' }: ProfilePhotoProps) => (

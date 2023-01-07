@@ -7,7 +7,7 @@ const TooltipModifiers = {
   top: (theme: DefaultTheme) => css`
     &::before {
       bottom: calc(100% + 5px + 1px);
-      left: 30%;
+      left: 50%;
       transform: translateX(-50%);
     }
 
@@ -43,7 +43,7 @@ const TooltipModifiers = {
 
     &::after {
       left: calc(100% + 1px);
-      top: 50%;
+      top: 30%;
       transform: translateY(-50%);
       border-left-width: 0;
       border-right-color: ${theme.colours.darkGray};
@@ -66,30 +66,28 @@ const TooltipModifiers = {
   `
 }
 
+const afterAnimation = () => css`
+  animation-duration: 0.2s;
+  animation-delay: 0.6s;
+  animation-fill-mode: both;
+`
+
 const AfterModifers = {
   top: () => css`
+    ${afterAnimation()};
     animation-name: slideInDown;
-    animation-duration: 0.2s;
-    animation-delay: 0.5s;
-    animation-fill-mode: both;
   `,
   bottom: () => css`
+    ${afterAnimation()};
     animation-name: slideInUp;
-    animation-duration: 0.2s;
-    animation-delay: 0.5s;
-    animation-fill-mode: both;
   `,
   left: () => css`
+    ${afterAnimation()};
     animation-name: slideInLeft;
-    animation-duration: 0.2s;
-    animation-delay: 0.5s;
-    animation-fill-mode: both;
   `,
   right: () => css`
+    ${afterAnimation()};
     animation-name: slideInRight;
-    animation-duration: 0.2s;
-    animation-delay: 0.5s;
-    animation-fill-mode: both;
   `
 }
 
@@ -109,6 +107,7 @@ export const Wrapper = styled.div<TooltipStyleProps>`
       padding: 0.4rem;
       border-radius: 4px;
       white-space: nowrap;
+      z-index: ${theme.layers.alwaysOnTop};
     }
 
     &::after {
@@ -118,18 +117,22 @@ export const Wrapper = styled.div<TooltipStyleProps>`
       width: 0;
       height: 0;
       border: 5px solid transparent;
+      z-index: ${theme.layers.alwaysOnTop};
     }
 
     &:hover {
-      &::before {
-        visibility: visible;
-        animation-name: bounceIn;
-        animation-duration: 0.5s;
-        animation-fill-mode: both;
-      }
-      &::after {
-        ${!!direction && AfterModifers[direction!]}
-      }
+      @media not (max-width: 768px) {
+        &::before {
+          visibility: visible;
+          animation-name: bounceIn;
+          animation-delay: 0.3s;
+          animation-duration: 0.3s;
+          animation-fill-mode: both;
+        }
+        &::after {
+          ${!!direction && AfterModifers[direction!]}
+        }
+      /* } */
     }
 
     ${!!direction && TooltipModifiers[direction!](theme)};
