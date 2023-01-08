@@ -14,7 +14,9 @@ export default {
     title: 'Mucalol',
     img: 'https://api.lorem.space/image/movie?w=150&amp;amp;amp;amp;h=220',
     size: 'large'
-  },
+  }
 } as Meta<ProfilePhotoProps>
 
-export const Default: Story<ProfilePhotoProps> = (args) => <ProfilePhoto {...args} />
+export const Default: Story<ProfilePhotoProps> = (args) => (
+  <ProfilePhoto {...args} />
+)

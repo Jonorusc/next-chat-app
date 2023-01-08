@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Plugin, NewPlugin } from 'pretty-format'
 
 declare global {
   namespace jest {
     interface AsymetricMatcher {
       $$typeof: symbol
-      sample?: string | RegExp | object | Array<any> | Function 
+      // eslint-disable-next-line @typescript-eslint/ban-types, @typescript-eslint/no-explicit-any
+      sample?: string | RegExp | object | Array<any> | Function
     }
     type Value = string | number | RegExp | AsymetricMatcher | undefined
     interface Options {

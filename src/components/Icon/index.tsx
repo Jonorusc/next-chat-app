@@ -13,12 +13,7 @@ export type IconProps = {
 } & ButtonTypes
 
 const Icon: React.ForwardRefRenderFunction<S.StyleProps, IconProps> = (
-  { 
-    icon, 
-    badge = false, 
-    color = 'white',
-    ...props 
-  },
+  { icon, badge = false, color = 'white', ...props },
   ref
 ) => (
   <S.Wrapper badge={badge} color={color} ref={ref} {...props}>

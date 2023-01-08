@@ -15,7 +15,11 @@ export default {
   args: {
     value: 'Mucalol',
     direction: 'bottom'
-  },
+  }
 } as Meta<TooltipProps>
 
-export const Default: Story<TooltipProps> = (args) => <ToolTip {...args}><Chat size={20}/></ToolTip>
+export const Default: Story<TooltipProps> = (args) => (
+  <ToolTip {...args}>
+    <Chat size={20} />
+  </ToolTip>
+)

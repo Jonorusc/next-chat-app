@@ -3,8 +3,7 @@
     "browser": true,
     "es2021": true,
     "jest": true,
-    "node": true,
-    "jest/globals": true
+    "node": true
   },
   "settings": {
     "react": {
@@ -30,6 +29,12 @@
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-non-null-assertion": "off"
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }

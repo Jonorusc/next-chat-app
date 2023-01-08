@@ -1,4 +1,4 @@
-import styled, { css, DefaultTheme } from 'styled-components'
+import styled, { css } from 'styled-components'
 import { ProfilePhotoProps } from '.'
 
 type ProfileProps = Pick<ProfilePhotoProps, 'size'>
@@ -11,7 +11,7 @@ const sizeModifiers = {
   large: () => css`
     width: 5.5rem;
     height: 5.5rem;
-  ` 
+  `
 }
 
 export const Wrapper = styled.div`

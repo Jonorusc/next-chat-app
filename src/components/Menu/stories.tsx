@@ -10,8 +10,9 @@ export default {
     layout: 'fullscreen'
   },
   args: {
-    userProfile: 'https://api.lorem.space/image/movie?w=150&amp;amp;amp;amp;h=220'
+    userProfile:
+      'https://api.lorem.space/image/movie?w=150&amp;amp;amp;amp;h=220'
   }
 } as Meta<MenuProps>
 
-export const Default: Story<MenuProps> = (args) => <Menu {...args}/>
+export const Default: Story<MenuProps> = (args) => <Menu {...args} />

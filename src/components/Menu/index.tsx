@@ -19,7 +19,7 @@ export type MenuProps = {
 }
 
 const Menu = ({ userProfile }: MenuProps) => {
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState(1)
 
   return (
     <S.Wrapper>
@@ -27,28 +27,28 @@ const Menu = ({ userProfile }: MenuProps) => {
         <S.Menu>
           <ProfilePhoto title="User name" img={userProfile} />
           <S.MenuItems>
-            <S.MenuItem>
+            <S.MenuItem onClick={() => setActive(0)}>
               <ToolTip direction="right" value="Stories">
                 <Link href="#stories" passHref>
                   <Icon icon={<WebStories />} />
                 </Link>
               </ToolTip>
             </S.MenuItem>
-            <S.MenuItem>
+            <S.MenuItem onClick={() => setActive(1)}>
               <ToolTip direction="right" value="Messages">
                 <Link href="#chat" passHref>
                   <Icon icon={<Chat />} badge />
                 </Link>
               </ToolTip>
             </S.MenuItem>
-            <S.MenuItem>
+            <S.MenuItem onClick={() => setActive(2)}>
               <ToolTip direction="right" value="Groups">
                 <Link href="#groups" passHref>
                   <Icon icon={<Groups />} />
                 </Link>
               </ToolTip>
             </S.MenuItem>
-            <S.MenuItem>
+            <S.MenuItem onClick={() => setActive(3)}>
               <ToolTip direction="right" value="Settings">
                 <Link href="#settings" passHref>
                   <Icon icon={<Settings />} />

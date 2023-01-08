@@ -1,4 +1,5 @@
-import styled, { css, DefaultTheme } from 'styled-components'
+import styled, { css } from 'styled-components'
+import { darken } from 'polished'
 // import { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
 
 import { Wrapper as Tooltip } from '../ToolTip/styles'
@@ -39,7 +40,7 @@ const keyframeAnimate = (child: number) => css`
   animation-duration: 0.3s;
   animation-delay: 0.2s;
   animation-fill-mode: forwards;
-  
+
   @keyframes ${`animate_${child}`} {
     30% {
       height: 0.7rem;
@@ -60,14 +61,16 @@ const keyframeAnimate = (child: number) => css`
 // line hover effect
 export const Line = styled.div<MenuItemProps>`
   ${({ theme, active }) => css`
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 50%;
-    position: absolute;
-    left: -0.8rem;
-    background-color: ${theme.colours.white};
-    ${lineAnimtation(active!)};
-    ${keyframeAnimate(active!)};
+    @media screen and (min-width: 768px) {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      position: absolute;
+      left: -0.8rem;
+      background-color: ${theme.colours.white};
+      ${lineAnimtation(active!)};
+      ${keyframeAnimate(active!)};
+    }
   `}
 `
 // end line hover effect
@@ -75,12 +78,11 @@ export const Line = styled.div<MenuItemProps>`
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     position: fixed;
-    background-color: transparent;
+    background-color: ${darken(0.04, theme.colours.primary)};
     width: 6rem;
     height: 100vh;
     padding-top: ${theme.spacings.medium};
     padding-bottom: ${theme.spacings.medium};
-    border-right: 0.1rem solid ${theme.colours.white};
 
     ${Container} {
       position: relative;
@@ -89,7 +91,6 @@ export const Wrapper = styled.div`
     @media screen and (max-width: 768px) {
       width: 100%;
       height: 4rem;
-      background-color: ${theme.colours.primary};
       border-right: unset;
       bottom: 0;
       left: 0;
@@ -151,9 +152,7 @@ export const MenuItems = styled(Menu)`
   }
 `
 
-export const MenuItem = styled.div`
-  
-`
+export const MenuItem = styled.div``
 
 export const Logo = styled.div`
   ${({ theme }) => css`

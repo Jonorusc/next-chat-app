@@ -1,4 +1,4 @@
-import styled, { css, DefaultTheme } from 'styled-components'
+import styled, { css } from 'styled-components'
 import { IconProps } from '.'
 
 export type StyleProps = Pick<IconProps, 'badge' | 'color'>
@@ -10,12 +10,14 @@ export const Wrapper = styled.div<StyleProps>`
     position: relative;
 
     &:first-child {
-      ${color && css`
+      ${color &&
+      css`
         color: ${theme.colours[color!]};
       `}
     }
 
-    ${badge && css`
+    ${badge &&
+    css`
       &::after {
         content: '';
         position: absolute;

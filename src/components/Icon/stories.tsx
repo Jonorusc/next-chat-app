@@ -13,4 +13,4 @@ export default {
   }
 } as Meta<IconProps>
 
-export const Default: Story<IconProps> = (args) => <Icon {...args}/>
+export const Default: Story<IconProps> = (args) => <Icon {...args} />

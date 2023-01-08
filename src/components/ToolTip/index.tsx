@@ -9,10 +9,10 @@ export type TooltipProps = {
   as?: React.ElementType
 } & HTMLTypes
 
-const ToolTip: React.ForwardRefRenderFunction<S.TooltipStyleProps, TooltipProps> = (
-  { value, direction, children, ...props },
-  ref
-) => (
+const ToolTip: React.ForwardRefRenderFunction<
+  S.TooltipStyleProps,
+  TooltipProps
+> = ({ value, direction, children, ...props }, ref) => (
   <S.Wrapper value={value} direction={direction} ref={ref} {...props}>
     {children}
   </S.Wrapper>

@@ -11,7 +11,7 @@ const ProfilePhoto = ({ title, img, size = 'normal' }: ProfilePhotoProps) => (
     <S.ImageBox size={size}>
       <S.Image src={img} alt="a circle with a user's profile image" />
     </S.ImageBox>
-    {(!!title && size !== 'normal') ? <S.Title>{title}</S.Title> : null}
+    {!!title && size !== 'normal' ? <S.Title>{title}</S.Title> : null}
   </S.Wrapper>
 )
 
